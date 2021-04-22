@@ -5,6 +5,7 @@ import (
 	"errors"
 	"github.com/graarh/golang-socketio/protocol"
 	"github.com/graarh/golang-socketio/transport"
+    "log"
 	"net/http"
 	"sync"
 	"time"
