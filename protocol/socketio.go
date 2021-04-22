@@ -13,6 +13,7 @@ const (
 	emptyMessage  = "40"
 	commonMessage = "42"
 	ackMessage    = "43"
+	binaryMessage = "45"
 
 	CloseMessage = "1"
 	PingMessage = "2"
@@ -104,7 +105,7 @@ func getMessageType(data string) (int, error) {
 		switch data[0:2] {
 		case emptyMessage:
 			return MessageTypeEmpty, nil
-		case commonMessage:
+		case commonMessage,binaryMessage:
 			return MessageTypeAckRequest, nil
 		case ackMessage:
 			return MessageTypeAckResponse, nil
