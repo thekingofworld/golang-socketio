@@ -85,7 +85,7 @@ func (c *Channel) IsAlive() bool {
 Close channel
 */
 func closeChannel(c *Channel, m *methods, args ...interface{}) error {
-    log.Println("close, err: ", args...)
+    log.Println(args...)
 	c.aliveLock.Lock()
 	defer c.aliveLock.Unlock()
 
