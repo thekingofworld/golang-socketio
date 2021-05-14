@@ -85,7 +85,6 @@ func (c *Channel) IsAlive() bool {
 Close channel
 */
 func closeChannel(c *Channel, m *methods, args ...interface{}) error {
-    log.Println(args...)
 	c.aliveLock.Lock()
 	defer c.aliveLock.Unlock()
 
@@ -119,7 +118,6 @@ func inLoop(c *Channel, m *methods) error {
 		if err != nil {
 			return closeChannel(c, m, err)
 		}
-        log.Println(pkg)
 		msg, err := protocol.Decode(pkg)
 		if err != nil {
             log.Println(err)
